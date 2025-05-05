@@ -1,16 +1,26 @@
 const express = require("express")
+const user = require("./control/user.js")
+
 const app = express()
 app.use(express.json())
 
 const port = 5000
 
+// Creando los endpoints para la gestion de usuarios:
+app.get("/users", user.list)
+
+app.get("/users/:id", user.get)
+
+app.post("/users/:id", user.create)
+
 // método | verbo GET
 app.get("/", (req, res) => {
-    res.status(200).send("Hola API")
+  // 200 -> OK : https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200
+    res.status(200).send("Hola desde el API")  
 })
 
 app.post("/", (req, res) => {
-    // 201 -> OK -> Data Created : https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201
+   // 201 -> OK -> Data Created : https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201
     res.status(201).send("element created")  
 })
 
@@ -21,7 +31,5 @@ app.put("/", (req, res) => {
 app.delete("/", (req, res) => {
     res.status(204).send("NO content in delete")  
 })
-
-
 app.listen(port)
 
