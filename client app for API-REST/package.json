@@ -1,5 +1,9 @@
 {
-  "name": "api-rest",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "name": "api-rest-and-client-app",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,9 +12,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0"
-  }
+  "description": ""
 }

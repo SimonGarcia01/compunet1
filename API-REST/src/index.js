@@ -1,12 +1,16 @@
 const express = require("express")
+const cors = require("cors"); // Importar la librería
+const path = require('path');
 const user = require("./control/usercontroller")
 
 const app = express()
-
 app.use(express.json())
+
+app.use(cors()); // Habilitarla
 
 const port = 5000
 
+// Creando los endpoints para la gestion de usuarios:
 app.get("/users", user.list)
 
 app.get("/users/:id", user.get)
