@@ -21,14 +21,14 @@ public class Sender {
                 msg.length()
                 );
             //                                            dest. ip, dest. port
-            socket.connect(InetAddress.getByName("192.168.131.160"), 5000);
+            socket.connect(InetAddress.getByName("127.0.0.1"), 5000);
             
             //the info is packaged and then sent
             socket.send(packet);
         } catch(Exception e){
             e.printStackTrace();
         }
-        /* This doesn't work in later versions of java
+        /* This does work, ignore the last comment it just needs one variable name
         catch(SocketException | UnknownHostException er){
             er.printStackTrace();
         }

@@ -2,7 +2,7 @@ import java.net.DatagramSocket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.net.DatagramPacket;
-import java.net.InetAddress;
+
 
 public class Receiver {
     public static void main(String[] args) {
