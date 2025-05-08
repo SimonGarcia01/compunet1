@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "express": "^4.21.2"
   },
   "name": "api-rest-and-client-app",
   "version": "1.0.0",
