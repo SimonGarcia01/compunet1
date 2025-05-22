@@ -41,7 +41,7 @@ subprojects {
     task copyIceJar(type: Copy){
         from configurations.runtimeClassPath
         include 'ice-3.7.4.jar'
-        into '$buildDir/libs'
+        into '${buildDir}/libs'
     }
 
     jar.dependsOn copyIceJar
