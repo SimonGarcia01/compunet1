@@ -19,7 +19,12 @@ public class TCPServer {
 
             //Execute multiple threads
             while (true) {
+                System.out.println("Waiting for client connections...");
                 Socket socket = serverSocket.accept();
+                System.out.println("Client Connected from IP: "+ socket.getInetAddress() + 
+                    " Port: " + socket.getPort());
+
+                //Create a new thread for each client connection
                 pool.execute(new ClientHandler(socket));
             }
             
