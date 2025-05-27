@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import com.zeroc.Ice.*;
 
 import Demo.*;
@@ -23,6 +27,18 @@ public class Client {
             if(publisher == null){
                 throw new Error("Bad Ice Proxy");
             }
+
+            //Read input from the console
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            
+            String name = reader.readLine();
+
+            //Name of the subscriber and the subscriberPrx is the reference to the subscriber within the executing machine
+            publisher.addSubscriber(name, subscriberPrx);
+            
+            communicator.waitForShutdown();
+        }catch(IOException e){
+            e.printStackTrace();
         }
     }
 }   
